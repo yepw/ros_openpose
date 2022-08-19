@@ -60,6 +60,9 @@ Date: 2020/08/10
     <include file="$(find azure_kinect_ros_driver)/launch/driver.launch" >
       <arg name="required" value="true" />
       <arg name="point_cloud_in_depth_frame" value="true" />
+        <arg name="depth_mode" value="WFOV_2X2BINNED"/>
+        <arg name="fps" value="30"/>
+        <arg name="color_resolution" value="720P"/>
     </include>
     <!-- invoke rviz -->
     <group if="$(arg rviz)" >
@@ -72,6 +75,7 @@ Date: 2020/08/10
     <include file="$(find azure_kinect_ros_driver)/launch/driver.launch" >
       <arg name="required" value="true" />
       <arg name="point_cloud_in_depth_frame" value="false" />
+        <arg name="fps" value="10"/>
     </include>
     <!-- invoke rviz -->
     <group if="$(arg rviz)" >

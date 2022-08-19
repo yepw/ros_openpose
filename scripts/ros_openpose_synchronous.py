@@ -10,6 +10,7 @@ import numpy as np
 from cv_bridge import CvBridge, CvBridgeError
 from ros_openpose.msg import Frame, Person, BodyPart, Pixel
 from sensor_msgs.msg import Image, CameraInfo
+from std_msgs.msg import Int16
 
 
 # Import Openpose (Ubuntu)
@@ -148,6 +149,7 @@ class rosOpenPose:
         if self.detect(rhand_kp):
             rhand_detected = True
             hand_part_count = rhand_kp.shape[1]
+            
 
         # Handle body points
         fr.persons = [Person() for _ in range(num_persons)]
